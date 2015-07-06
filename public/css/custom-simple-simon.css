@@ -1,0 +1,16 @@
+.outerShell {
+
+	width: 50%;
+	height: 50%px;
+	background-color: #101010;
+	margin: auto;
+
+}
+
+.innerShell {
+	width: 40%;
+	height: 40%;
+	background-color: #000011;
+	margin: auto;
+
+}
