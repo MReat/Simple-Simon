@@ -2,13 +2,29 @@
 <head>
 	<title>Simple Simon Game</title>
 	<link rel="stylesheet" type="text/css" href="/css/custom-simple-simon.css">
-	<link rel="stylesheet" type="text/css" href="/js/custom-simple-simon.js">
+	<script src="/js/jquery-1.11.3.js"></script>
+	<script src="/js/simple-simon.js"></script>
+
 </head>
 <body>
 	<h1>Simple Simon</h1>
+	<button id="start">Start</button>
 
-	<div class="outerShell"></div>	
-	<div class="innerShell"></div>
+	<div class="outerShell" id="container">
+		<div class="top_row">
+			<div class="box" id="green" data-colorID="0"></div>
+			<div class="box" id="red" data-colorID="1"></div>
+		</div>
+		
+		<div  class="bottom_row">
+			<div class="box" id="yellow" data-colorID="2"></div>
+			<div class="box" id="blue" data-colorID="3"></div>
+		</div>
+
+	</div>
+		
+		<!-- <div class="innerShell"></div> -->
+
 
 
 

@@ -1,16 +1,63 @@
-.outerShell {
+body {
+	background-color: #a8a8a8;
+	font-family: Helvetica, Arial, sans-serif;
+}
 
-	width: 50%;
-	height: 50%px;
-	background-color: #101010;
-	margin: auto;
+.box {
 
 }
 
-.innerShell {
-	width: 40%;
-	height: 40%;
-	background-color: #000011;
-	margin: auto;
+.active {
+	opacity: .4;
+}
 
+.outerShell {
+	width: 540px;
+	height: 540px;
+	margin: auto;
+	border-radius: 560px;
+}
+
+.top_row {
+	position: relative;
+}
+
+.bottom_row {
+	position: relative;
+}
+
+#green {
+	width: 240px;
+	height:  240px;
+	background-color: #00FF00;
+	margin: 15px 10px 10px 15px;
+	border-radius: 240px 10px 10px 10px;
+	float: left;
+}
+
+#red {
+	width: 240px;
+	height: 240px;
+	margin: 15px 15px 10px 10px;
+	border-radius: 10px 240px 10px 10px;
+	background-color: #ff0000;
+	float: right;
+}
+
+#yellow {
+	width:  240px;
+	height:  240px;
+	margin: 10px 10px 15px 15px;
+	border-radius: 10px 10px 10px 240px;
+	background-color: #FFFF00;
+	float: left;
+}
+
+#blue {
+	width:  240px;
+	height:  240px;
+	margin: 10px 15px 15px 10px;
+	border-radius: 10px 10px 240px 10px;
+	background-color: #0000FF;
+	float: right;
 }
