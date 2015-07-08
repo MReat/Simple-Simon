@@ -1,72 +1,69 @@
 "use strict";
-$(document).ready(function (){
+$(document).ready(function () {
+var computerSequence = [];
+var userIndex = 0; 
+
+// Box Animation
+	function flashBox (id) {
+		$('#' + id).addClass('active');
+		setTimeout(function () {
+			$('#' + id).removeClass('active');
+			}, 100);
+	};
+
+// User Game Functions
+	$('.box').click(function () {
+		var boxClick = $(this).attr('id');
+		flashBox(boxClick);
+		var playerColor = $(this).attr('id'); 
+		console.log(playerColor);
+		if (boxClick == computerSequence[userIndex]) {
+			userIndex +=1;
+			if (userIndex == computerSequence.length) {
+				copy ();
+				userIndex = 0;
+			}
+		} else {
+			alert("Game Over - You made it to Round: " + computerSequence.length + "!");
+			location.reload(true);
+		}
+	});
+
+// Computer Game Functions
+	$('#start').click(function () {
+		randomComputerChoice();
+		playSimonSequence();
+	});	
 	
-		var playerColorArray = [];
-
-		$('.box').click(function (box) {
-			var boxClick = $(this);
-			flashBox(boxClick);
-			var playerColor = $(this).attr('data-colorID');
-			// for (var i = 0; i < playerColor.length; i++) {
-			// 	console.log(playerColor[i]);
-			// }
-				console.log(playerColor);
-				playerColorArray.push(playerColor);
-				console.log(playerColorArray);
-		});
-		
-		function flashBox (box) {
-			box.addClass('active')
-			setTimeout(function () {
-				box.removeClass('active');
-				}, 200)
-		}
-
-	$('#start').click(function (box) {
+	// random color selector
+	function randomComputerChoice () {	
 		var colorArray = $('.box');
-		var	computerColor = Math.floor(Math.random() * colorArray.length);
-		console.log(computerColor);
-		var computerColorArray = [];
-		computerColorArray.push(computerColor);
-		console.log(computerColorArray);
+		var	randomComputerColor = Math.floor(Math.random() * colorArray.length); 
+		var boxToAnimate = colorArray[randomComputerColor];
+		var id = boxToAnimate.getAttribute('id');
+		computerSequence.push(id); 
+		console.log(computerSequence);
+	};
+	
+	// color sequencing script
+	function playSimonSequence () {
+		var sliderValue = $('#slider').val();
+		console.log(sliderValue);
+		var i = 0;
+		var intervalID = setInterval(function() {
+			if (i >= computerSequence.length) {
+				clearInterval(intervalID);
+			};
+		flashBox(computerSequence[i])
+		i += 1;
+		}, (sliderValue * 100));
+	};
+	
+	// round sequencing portion...connected to the conditional in user game function
+	function copy () {
+		randomComputerChoice();
+		playSimonSequence();
+		$('#score').val("Round: " + computerSequence.length);
+	};
 
-
-		switch (computerColor) {
-			case 0:
-				$('#green').fadeOut(200).fadeIn(200);
-				break;
-			case 1:
-				$('#red').fadeOut(200).fadeIn(200);
-				break;
-			case 2:
-				$('#yellow').fadeOut(200).fadeIn(200);
-				break;
-			case 3:
-				$('#blue').fadeOut(200).fadeIn(200);
-				break;
-			default:
-				break;
-			console.log(flashBox(computerColor));
-		}
-
-	})
-
-			// if (computerColor == 0) {
-			// 	flashBox($('#green'));
-			// } else if (computerColor == 1) {
-			// 	flashBox($('#red'));
-			// } else if (computerColor == 2) {
-			// 	flashBox($('#yellow'));
-			// } else {
-			// 	flashBox($('#blue'));
-			// }
-		// }
-
-	// function randomBlink () {
-	// 	flashBox(colorBoxes);
-	// };
-
-
-
-
-});
+})

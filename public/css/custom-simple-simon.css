@@ -3,8 +3,46 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-.box {
+h1 {
+	font-size: 45px;
+	margin-bottom: 15px;
+	margin-left:; 10px;
+}
 
+aside {
+margin-top: 50px;
+height: 150	px;
+float: left;
+font-weight: bold;
+border: solid black 5px;
+border-radius: 25%;
+padding:25px 10px 30px 10px;
+background-color: #f0f0f0;
+}
+
+button {
+
+	height: 75px;
+	width: 75px;
+	border-radius: 25%;
+	font-size: 18px;
+	font-weight: bolder;
+	padding-top: 0px;
+	margin-left: 10px;
+	background-color: #66ff66;
+}
+
+
+#score {
+	width: 200px;
+	height: 75px;
+	font-size: 35px;
+	background-color: #383838;
+	color: red;
+	text-align: center;
+	margin-left: 25px;
+	border: 5px solid #010101;
+	border-radius: 25%;
 }
 
 .active {
@@ -15,7 +53,25 @@ body {
 	width: 540px;
 	height: 540px;
 	margin: auto;
-	border-radius: 560px;
+	border-radius: 100%;
+	background-color: black;
+}
+
+.innerShell {
+	width: 500px;
+	height: 500px;
+	padding-top: 25px;
+	margin: auto;
+	border-radius: 100%;
+	background-color: black;
+	position: relative;
+}
+
+.box {
+	width:  220px;
+	height:  220px;
+	margin: 10px 15px 15px 10px;
+
 }
 
 .top_row {
@@ -27,37 +83,25 @@ body {
 }
 
 #green {
-	width: 240px;
-	height:  240px;
+	border-radius: 100% 5% 25% 5%;
 	background-color: #00FF00;
-	margin: 15px 10px 10px 15px;
-	border-radius: 240px 10px 10px 10px;
 	float: left;
 }
 
 #red {
-	width: 240px;
-	height: 240px;
-	margin: 15px 15px 10px 10px;
-	border-radius: 10px 240px 10px 10px;
+	border-radius: 5% 100% 5% 25%;
 	background-color: #ff0000;
 	float: right;
 }
 
 #yellow {
-	width:  240px;
-	height:  240px;
-	margin: 10px 10px 15px 15px;
-	border-radius: 10px 10px 10px 240px;
+	border-radius: 5% 25% 5% 100%;
 	background-color: #FFFF00;
 	float: left;
 }
 
 #blue {
-	width:  240px;
-	height:  240px;
-	margin: 10px 15px 15px 10px;
-	border-radius: 10px 10px 240px 10px;
+	border-radius: 25% 5% 100% 5%;
 	background-color: #0000FF;
 	float: right;
 }
