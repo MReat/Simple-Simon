@@ -71,15 +71,8 @@ button {
 	width:  220px;
 	height:  220px;
 	margin: 10px 15px 15px 10px;
+	float: left;
 
-}
-
-.top_row {
-	position: relative;
-}
-
-.bottom_row {
-	position: relative;
 }
 
 #green {

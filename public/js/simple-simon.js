@@ -4,7 +4,7 @@ var computerSequence = [];
 var userIndex = 0; 
 
 // Box Animation
-	function flashBox (id) {
+	function flashBox (id) { // consider a fadeOut(200).fadeIn(200)
 		$('#' + id).addClass('active');
 		setTimeout(function () {
 			$('#' + id).removeClass('active');
@@ -15,8 +15,6 @@ var userIndex = 0;
 	$('.box').click(function () {
 		var boxClick = $(this).attr('id');
 		flashBox(boxClick);
-		var playerColor = $(this).attr('id'); 
-		console.log(playerColor);
 		if (boxClick == computerSequence[userIndex]) {
 			userIndex +=1;
 			if (userIndex == computerSequence.length) {
@@ -31,8 +29,10 @@ var userIndex = 0;
 
 // Computer Game Functions
 	$('#start').click(function () {
+		computerSequence = [];
 		randomComputerChoice();
 		playSimonSequence();
+		$('#score').val("Round: " + computerSequence.length);
 	});	
 	
 	// random color selector
@@ -48,7 +48,6 @@ var userIndex = 0;
 	// color sequencing script
 	function playSimonSequence () {
 		var sliderValue = $('#slider').val();
-		console.log(sliderValue);
 		var i = 0;
 		var intervalID = setInterval(function() {
 			if (i >= computerSequence.length) {
